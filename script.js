@@ -1,3 +1,6 @@
+let playerScore = 0;
+let cpuScore = 0;
+
 function getComputerChoice(){
    let nb = Math.floor(Math.random() * 3);
    if (nb===0){ return 'ROCK'; }
@@ -5,65 +8,75 @@ function getComputerChoice(){
    if (nb===2){ return 'SCISSORS'; }
 }
 function getPlayerChoice(){
-   var choice = prompt("Rock, Paper, Scissors ?");
-   return choice;
+   let choice = prompt("Rock, Paper, Scissors ?");
+   return choice.toUpperCase();
 }
 function playRound(playerSelect,compSelect){
-   var roundMsg;
+   let roundMsg;
    playerSelect = getPlayerChoice();
    compSelect = getComputerChoice();
-   console.log("Player: "+playerSelect+" CPU: "+compSelect);
+   console.log("Player:"+playerSelect+" CPU:"+compSelect);
 
    /*DRAW*/
    if (playerSelect == compSelect){
       roundMsg = playerSelect+" Vs "+compSelect+" : It's a Draw !";
    }
    else{
-      /*ROCK*/
+   /*ROCK*/
       if (playerSelect == 'ROCK'){
          if(compSelect == 'PAPER'){
             roundMsg="You Lose! Paper beats Rock";
+            cpuScore++;
          }
          else{ 
             roundMsg = "You win! Rock beats Scissors";
+            playerScore++;
          }
       }
-      /*PAPER*/
+   /*PAPER*/
       if (playerSelect=='PAPER'){
          if(compSelect=='SCISSORS'){
             roundMsg = "You Lose! Scissors beats Paper";
-            cpuToken=+1;
+            cpuScore++;
          }
          else{
             roundMsg = "You win! Paper beats Rock";
+            playerScore++;
          }
       }
-      /*SCISSORS*/
+   /*SCISSORS*/
       if (playerSelect=='SCISSORS'){
          if(compSelect=='ROCK'){
             roundMsg ="You Lose! Rock beats Scissors";
+            cpuScore++;
          }
          else{
             roundMsg = "You win! Scissors beats Paper";
+            playerScore++;
          }
       }
    }
-   return roundMsg;
+   console.log(roundMsg);
 }
 function game(){
-   /*var playerScore = 0;
-   var cpuScore = 0;*/
+   console.log("BEST OF 5!")
    for(i=0;i<=5;i++){
       console.log("Round"+i+" !")
-      console.log(playRound(getPlayerChoice,getComputerChoice));
-      /*
-      console.log("//SCORE// player:"+playerScore+" cpu:"+cpuScore);
-      */
+      playRound(getPlayerChoice,getComputerChoice);
+      
+      console.log("//SCORE// Player:"+playerScore+" Cpu:"+cpuScore);
+      
    }
-   /*
-   if(playerScore>cpuScore){
-      console.log("YOU WON");
+   
+   if(playerScore==cpuScore){
+      console.log("IT'S A TIE!");
    }   
-   else{ console.log("YOU LOSE"); }   
-   */
+   else { 
+      if(playerScore>cpuScore){
+         console.log("YOU WIN!");
+      }
+      else{
+         console.log("YOU LOSE!");
+      } 
+   }
 }

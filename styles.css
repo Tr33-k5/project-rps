@@ -1,70 +1,92 @@
 body{
-   border: 5px black solid;
-   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 0;
+   background-color:darkorchid;
+}
+.game-section{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding: 5% 0 5% 0;
+   border: 1px black solid;
+   background-color: darkmagenta;
+}
+.player-section{
+   display: flex;
+   flex-direction: row;
+   border: 4px darkred solid;
+}
+.weapon-section{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   border: 1px black solid;
+   background-color:saddlebrown;
+}
+.weapon{
+   height: 50px;
+   width: 50px;
+   border: 1px black solid;
+   background-color: grey;
+}
+.display-section{
+   display: flex;
+   flex-direction: column;
+   border: 1px black solid;
+   background-color: sienna;
+}
+.name-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px black solid;
    margin: 5px;
 }
-.game-container{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+.name-container p{
+   border: 1px black solid;
+   height: 20px;
+   width: 70px;
 }
-.player-container{
-   border: 5px black solid;
+.score-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px black solid;
    padding: 5px;
-   margin: 5px;
-}
-.player-container{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
-}
-.name{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
-}
-.weapon-container{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
-}
-.rock{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
-}
-.paper{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
-}
-.scissors{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+   margin: 5px; 
 }
 .display{
-   border: 5px black solid;
+   border: 1px black solid;
+   background-color: grey;
    padding: 5px;
    margin: 5px;
+   height: 300px;
+   width: 300px;
 }
-.score{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+.score-container p{
+   border: 1px black solid;
+   height: 20px;
+   width: 20px;
 }
-.versus-container{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+.versus-section{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border: 4px darkred solid;
 }
 .versus{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+   border: 1px black solid;
+   background-color: grey;
+   height: 150px;
+   width: 150px;
+}
+.dialog-section{
+   border: 1px black solid;
+   background-color:mediumvioletred;
+   padding: 1% 10% 1% 10%;
 }
 .dialog-container{
-   border: 5px black solid;
-   padding: 5px;
-   margin: 5px;
+   border: 1px black solid;
 }

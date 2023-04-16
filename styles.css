@@ -1,0 +1,70 @@
+body{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.game-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.player-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.player-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.name{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.weapon-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.rock{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.paper{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.scissors{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.display{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.score{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.versus-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.versus{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}
+.dialog-container{
+   border: 5px black solid;
+   padding: 5px;
+   margin: 5px;
+}

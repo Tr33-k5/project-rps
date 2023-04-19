@@ -3,90 +3,90 @@ body{
    flex-direction: column;
    justify-content: center;
    margin: 0;
-   background-color:darkorchid;
+   background-color:darkslategray;
 }
 .game-section{
    display: flex;
    flex-direction: row;
    justify-content: space-around;
-   padding: 5% 0 5% 0;
-   border: 1px black solid;
-   background-color: darkmagenta;
 }
 .player-section{
    display: flex;
    flex-direction: row;
-   border: 4px darkred solid;
-}
-.weapon-section{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   border: 1px black solid;
-   background-color:saddlebrown;
-}
-.weapon{
-   height: 50px;
-   width: 50px;
-   border: 1px black solid;
-   background-color: grey;
 }
 .display-section{
    display: flex;
    flex-direction: column;
-   border: 1px black solid;
-   background-color: sienna;
 }
 .name-container{
    display: flex;
    justify-content: center;
    align-items: center;
-   border: 1px black solid;
-   margin: 5px;
 }
 .name-container p{
-   border: 1px black solid;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 2%;
    height: 20px;
    width: 70px;
+   font: bolder;
+   font-size: 30px;
+   font-weight: bold;
+   font-style: italic;  
 }
 .score-container{
    display: flex;
    justify-content: center;
    align-items: center;
-   border: 1px black solid;
    padding: 5px;
    margin: 5px; 
+   font: bolder;
+   font-size: 40px;
+   font-weight: bold;
+   font-style: italic;  
 }
 .display{
-   border: 1px black solid;
-   background-color: grey;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: solid black 3px;
+   border-radius: 30%;
    padding: 5px;
    margin: 5px;
-   height: 300px;
-   width: 300px;
+   height: 500px;
+   width: 550px;
 }
 .score-container p{
-   border: 1px black solid;
    height: 20px;
    width: 20px;
 }
 .versus-section{
    display: flex;
-   flex-direction: column;
    justify-content: center;
-   border: 4px darkred solid;
+   align-items: center;
 }
 .versus{
-   border: 1px black solid;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    background-color: grey;
+   height: 300px;
+   width: 300px;
+}
+.weapon-section{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   padding: 2% 10% 1% 10%;
+}
+.weapon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
    height: 150px;
    width: 150px;
-}
-.dialog-section{
-   border: 1px black solid;
-   background-color:mediumvioletred;
-   padding: 1% 10% 1% 10%;
-}
-.dialog-container{
-   border: 1px black solid;
+   border-radius: 50%;
+   border: 5px black solid;
+   background-color: grey;
 }

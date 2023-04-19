@@ -1,0 +1,10 @@
+function intro(){}
+function gameover(){}
+function transition(){}
+function getPlayerName(){}
+function playRound(){}
+function getPlayerChoice(){}
+function getComputerChoice(){}
+function battlePhase(){}
+function updateScore(){}
+function game(){}

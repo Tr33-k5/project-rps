@@ -23,13 +23,8 @@ body{
    justify-content: center;
    align-items: center;
 }
-.name-container p{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 2%;
-   height: 20px;
-   width: 70px;
+.player-name{
+   margin-top:2%;
    font: bolder;
    font-size: 30px;
    font-weight: bold;
@@ -38,13 +33,14 @@ body{
 .score-container{
    display: flex;
    justify-content: center;
-   align-items: center;
-   padding: 5px;
-   margin: 5px; 
+   align-items: center;  
+}
+.player-score{
+   margin-bottom: 3%;
    font: bolder;
    font-size: 40px;
    font-weight: bold;
-   font-style: italic;  
+   font-style: italic;
 }
 .display{
    display: flex;
@@ -52,14 +48,8 @@ body{
    align-items: center;
    border: solid black 3px;
    border-radius: 30%;
-   padding: 5px;
-   margin: 5px;
    height: 500px;
    width: 550px;
-}
-.score-container p{
-   height: 20px;
-   width: 20px;
 }
 .versus-section{
    display: flex;

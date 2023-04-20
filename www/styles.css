@@ -1,10 +1,46 @@
+html,body{
+   height: 100%;
+   margin: 0;
+}
 body{
+   /*
    display: flex;
    flex-direction: column;
    justify-content: center;
-   margin: 0;
-   background-color:darkslategray;
+   */
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   background-color: aqua;
 }
+
+/*INTRO*/
+.intro-container{
+
+   display: flex;
+   flex-direction: column;
+}
+.intro-container p{
+   margin: 0;
+   font-size: 80px;
+   font-weight: bold;
+   font-style: italic;
+}
+
+/*OUTRO*/
+.outro-container{
+   display: flex;
+   flex-direction: column;
+}
+.outro-container p{
+   margin: 0;
+   font-size: 80px;
+   font-weight: bold;
+   font-style: italic;
+}
+
+/*GAME*/
 .game-section{
    display: flex;
    flex-direction: row;

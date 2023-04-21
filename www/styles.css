@@ -62,6 +62,14 @@ input{
 input:focus + i {
 	display: none;
 }
+button{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+button:hover{
+   color:rgb(0, 128, 255);
+}
 /*INTRO*/
 /*
 .intro-container{

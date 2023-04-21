@@ -6,18 +6,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Rock-Paper-Scissors</title>
    <link rel="stylesheet" href="./styles.css">
-   <script src="./script.js" defer></script>
+   <script src="./script(new).js" defer></script>
 </head>
 <body>
    <!--INTRO-PART-->
       <div class="intro-container">
          <form>
-            <label for="fname">
+            <label>
                <p>Hello World!</p>
                <p>Quel est ton nom ?</p>
             </label>
-            <br>
-            <input type="text" id="fname" name="fname">
+            <div class="cursor">
+               <input type="text" size="3" minlength="3" maxlength="8" autofocus/>
+               <i></i>
+            </div>
          </form>
       </div>
    <!---->
@@ -62,8 +64,8 @@
 
    <!--GAMEOVER-PART
    <div class="outro-container">
-      <p>You Lose!</p>
-      <p>You Won!</p>
+      <p class="ending1">You Lose!</p>
+      <p class="ending2">You Won!</p>
    </div>   
    -->
 </body>

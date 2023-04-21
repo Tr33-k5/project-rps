@@ -1,3 +1,9 @@
+*{
+   font-size: 80px;
+   font-weight: bold;
+   font-style: italic;
+   color: white;
+}
 html,body{
    height: 100%;
    margin: 0;
@@ -7,38 +13,69 @@ body{
    display: flex;
    flex-direction: column;
    justify-content: center;
-   */
+   /*game*/
+   /*background-color:dodgerblue;*/
+   /*outro*/
+   /*background-color:midnightblue;*/
+   /*intro*/
+   background-color:deepskyblue;
    display: flex;
-   flex-direction: row;
    justify-content: center;
    align-items: center;
-   background-color: aqua;
 }
 
-/*INTRO*/
-.intro-container{
-
+/*INTRO & OUTRO*/
+form{
    display: flex;
    flex-direction: column;
+   align-items: center;
+}
+.intro-container p,.outro-container p{
+   display: flex;
+   justify-content: center;
+   margin: 0;
+}
+input{
+   background-color: transparent;
+   border: none;
+   outline: none;
+   cursor:default;
+}
+/*Cursor blinking animation*/
+.cursor {
+	position: relative;
+}
+.cursor i {
+	position: absolute;
+	width: 5px;
+	height: 99%;
+	background-color: white;
+	left: 2px;
+   top:1%;
+	animation: blink 2s linear infinite;
+	opacity: 1; 
+}
+@keyframes blink {
+	0%,50% { opacity: 1; }
+	51%,100% { opacity: 0;}
+}
+input:focus + i {
+	display: none;
+}
+/*INTRO*/
+/*
+.intro-container{
 }
 .intro-container p{
-   margin: 0;
-   font-size: 80px;
-   font-weight: bold;
-   font-style: italic;
 }
-
+*/
 /*OUTRO*/
+/*
 .outro-container{
-   display: flex;
-   flex-direction: column;
 }
 .outro-container p{
-   margin: 0;
-   font-size: 80px;
-   font-weight: bold;
-   font-style: italic;
 }
+*/
 
 /*GAME*/
 .game-section{

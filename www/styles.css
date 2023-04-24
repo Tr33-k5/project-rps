@@ -62,13 +62,17 @@ input{
 input:focus + i {
 	display: none;
 }
-button{
+.btn-skip{
+   position: absolute;
+   bottom: 3%;
+   right: 4%;
    border: none;
    background-color: transparent;
    cursor: pointer;
+   color: white;
 }
-button:hover{
-   color:rgb(0, 128, 255);
+.btn-skip:hover{
+   color:rgb(0, 159, 212);
 }
 /*INTRO*/
 /*

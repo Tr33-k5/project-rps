@@ -1,27 +1,30 @@
 *{
-   font-size: 80px;
-   font-weight: bold;
-   font-style: italic;
-   color: white;
+   margin: 0;
+   padding: 0;
 }
 html,body{
    height: 100%;
-   margin: 0;
 }
 body{
-   /*
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   /*game*/
-   /*background-color:dodgerblue;*/
-   /*outro*/
-   /*background-color:midnightblue;*/
    /*intro*/
-   background-color:deepskyblue;
+   /*
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color:deepskyblue;
+   */
+   /*game*/
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color:rgb(49, 116, 216);
+   /*outro*/
+   /*
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color:rgb(27, 21, 80);
+   */
 }
 
 /*INTRO & OUTRO*/
@@ -33,7 +36,10 @@ form{
 .intro-container p,.outro-container p{
    display: flex;
    justify-content: center;
-   margin: 0;
+   font-size: 80px;
+   font-weight: bold;
+   font-style: italic;
+   color: white;
 }
 input{
    background-color: transparent;
@@ -41,7 +47,7 @@ input{
    outline: none;
    cursor:default;
 }
-/*Cursor blinking animation*/
+/*input-cursor blinking animation*/
 .cursor {
 	position: relative;
 }
@@ -74,20 +80,6 @@ input:focus + i {
 .btn-skip:hover{
    color:rgb(0, 159, 212);
 }
-/*INTRO*/
-/*
-.intro-container{
-}
-.intro-container p{
-}
-*/
-/*OUTRO*/
-/*
-.outro-container{
-}
-.outro-container p{
-}
-*/
 
 /*GAME*/
 .game-section{

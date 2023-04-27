@@ -1,41 +1,24 @@
-const txtArea = document.querySelector('.text-area');
-const btnContainer = document.querySelector('.btn-container');
-const btnStart = document.querySelector('.btn-start')
-const btnRock = document.querySelector('.btn-rock');
-const btnPaper = document.querySelector('.btn-paper');
-const btnScissors = document.querySelector('.btn-scissors');
-const p = document.createElement('p');
+let btnStart = document.querySelector('.btn-start');
+let txtArea = document.querySelector('.text-area');
+let btnContainer = document.querySelector('.btn-container');
+let p = document.createElement('p');
 let playerScore = 0;
 let cpuScore = 0;
 
-p.innerHTML = "Alright, Let's Battle !Choose your Move!";
-txtArea.appendChild(p);
+btnStart.addEventListener('click', game);
 
-btnStart.addEventListener('click', game());
-
-function getPlayerChoice(){
-   let playerChoice;
-   btnRock.addEventListener('click', () => {
-      playerChoice = btnRock.getAttribute("data-option");
-    });
-    btnPaper.addEventListener('click', () => {
-      playerChoice = btnPaper.getAttribute("data-option");
-    });
-    btnScissors.addEventListener('click', () => {
-      playerChoice = btnScissors.getAttribute("data-option");
-    });
-    return playerChoice;
-}
 function getComputerChoice(){
    let random = Math.floor(Math.random() * 3);
-   if (random===0){ cpuChoice = 'ROCK'; }
-   if (random===1){ cpuChoice = 'PAPER'; }
-   if (random===2){ cpuChoice = 'SCISSORS'; }
-   return cpuChoice;
+   let option;
+   if (random===0){ option = 'ROCK'; }
+   if (random===1){ option = 'PAPER'; }
+   if (random===2){ option = 'SCISSORS'; }
+   return option;
 }
 function playRound(playerSelect,cpuSelect){
    playerSelect = getPlayerChoice();
    compSelect = getComputerChoice();
+
    p.textContent = "Your "+playerSelect+" against the CPUs "+cpuSelect+"!";
    txtArea.appendChild(p);
 
@@ -87,8 +70,9 @@ function playRound(playerSelect,cpuSelect){
    }
 }
 function game(){
-   txtArea.removeChild('.btnStart');
-   console.log('4');
+   p.textContent = "Choose your Move!";
+   txtArea.appendChild(p);
+   btnStart.remove();
 
    let btn = document.createElement('button');
    btn.classList.add('btn-rock');
@@ -97,7 +81,7 @@ function game(){
    btnContainer.appendChild(btn);
 
    btn = document.createElement('button');
-   btn.classList.add('btn-rock');
+   btn.classList.add('btn-paper');
    btn.setAttribute("data-option", "PAPER");
    btn.textContent = 'PAPER';
    btnContainer.appendChild(btn);
@@ -108,38 +92,34 @@ function game(){
    btn.textContent = 'SCISSORS';
    btnContainer.appendChild(btn);
 
-   console.log('5');
-
    for(i=1;i<=5;i++){
-      /***ROUND+i+!***/
-      p.textContent = "/***Round"+i+" !***/";
+      p = document.createElement('p');
+      p.innerText = "Round "+i+"!";
       txtArea.appendChild(p);
 
-      console.log('6');
+      let cpuChoice = getComputerChoice();
+      let playerChoice;
 
+      /* playerChoice ??? */
+      /* event listener ??? */
+      /* AAAAAAAAAAAAAAAAAAH ??? */
+
+      /*
       playRound(getPlayerChoice,getComputerChoice);
 
-      console.log('7');
-
-      /***SCORE POINTS***/
-      /*Player:"+playerScore+"*/
-      /*CPU:"+cpuScore"*/
-      p.innerHTML = 
-         "/***SCORE POINTS***/"
-         "/*Player:"+playerScore+"*/"
-         "/*CPU:"+cpuScore+"*/"
+      p.innerText = 
+         "SCORE POINTS"
+         "Player:"+playerScore+
+         "CPU:"+cpuScore+
          "Choose your next move!";
       txtArea.appendChild(p);
-      
-      console.log('8');
+      */
    }
-
-   console.log('9');
+/*
    
    if(playerScore==cpuScore){
       p.textContent = "IT'S A TIE! Play the Round of Fate!";
       txtArea.appendChild(p);
-      /***/
    }   
    else { 
       if(playerScore>cpuScore){
@@ -151,4 +131,5 @@ function game(){
          txtArea.appendChild(p);
       } 
    }
+   */
 }

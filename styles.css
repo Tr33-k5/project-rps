@@ -30,7 +30,7 @@ body{
    border-top: 1px dotted;
 }
 
-.btn-container{
+.button-container{
    background-color:rgb(196, 196, 196);
    display: flex;
    justify-content: space-evenly;

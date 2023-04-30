@@ -7,6 +7,7 @@ let cpuScore = 0;
 let btnStart = document.querySelector('.button-start');
 btnStart.addEventListener('click', startGame);
 
+/* Chose randomly an option between 'rock', 'paper and 'scissors' for the cpu */
 function getComputerChoice(){
    let random = Math.floor(Math.random() * 3);
    let option;
@@ -15,7 +16,7 @@ function getComputerChoice(){
    if (random===2){ option = 'SCISSORS'; }
    return option;
 }
-
+/* Play a round and display a message if won or lost, and the score */
 function playOneRound(playerOption,cpuOption){
    let p = document.createElement('p');
    p.textContent = "Your "+playerOption+" against the CPUs "+cpuOption+"!";
@@ -82,7 +83,9 @@ function playOneRound(playerOption,cpuOption){
                "CPU:"+cpuScore;
    txtArea.appendChild(scoreP);
 }
-
+/* Erase the content of the text-area
+reset the content of the button-container
+with new buttons for the corresponding round */
 function resetGameContainer(i){
    //Select all p markups in '.text-area'
    let ps = document.querySelectorAll('.text-area > p');
@@ -118,14 +121,19 @@ function resetGameContainer(i){
    btnScissors.textContent = 'SCISSORS';
    btnContainer.appendChild(btnScissors);
 }
+/* Event Listener for round 1 */
 function round1(){
    resetGameContainer(2);
+   let p = document.createElement('p');
+   p.innerHTML = "ROUND 1";
+   txtArea.appendChild(p);
+
    let playerChoice = this.getAttribute('data-option');
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
 
-   let p = document.createElement('p');
-   p.innerHTML = "Round 2 !<br/>Choose your Move!";
+   p = document.createElement('p');
+   p.innerHTML = "Get ready for round 2 !<br/>Choose your Move :";
    txtArea.appendChild(p);
 
    let roundButtons = document.querySelectorAll('#btn-rd'+2);
@@ -133,15 +141,19 @@ function round1(){
       roundButton.addEventListener('click',round2);
    });
 }
-
+/* Event Listener for round 2 */
 function round2(){
    resetGameContainer(3);
+   let p = document.createElement('p');
+   p.innerHTML = "ROUND 2";
+   txtArea.appendChild(p);
+
    let playerChoice = this.getAttribute('data-option');
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
 
-   let p = document.createElement('p');
-   p.innerHTML = "Round 3 !<br/>Choose your Move!";
+   p = document.createElement('p');
+   p.innerHTML = "Get ready for round 3 !<br/>Choose your Move :";
    txtArea.appendChild(p);
 
    let roundButtons = document.querySelectorAll('#btn-rd'+3);
@@ -149,15 +161,19 @@ function round2(){
       roundButton.addEventListener('click',round3);
    });
 }
-
+/* Event Listener for round 3 */
 function round3(){
    resetGameContainer(4);
+   let p = document.createElement('p');
+   p.innerHTML = "ROUND 3";
+   txtArea.appendChild(p);
+
    let playerChoice = this.getAttribute('data-option');
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
 
-   let p = document.createElement('p');
-   p.innerHTML = "Round 4 !<br/>Choose your Move!";
+   p = document.createElement('p');
+   p.innerHTML = "Get ready for round 4 !<br/>Choose your Move :";
    txtArea.appendChild(p);
 
    let roundButtons = document.querySelectorAll('#btn-rd'+4);
@@ -165,15 +181,19 @@ function round3(){
       roundButton.addEventListener('click',round4);
    });
 }
-
+/* Event Listener for round 4 */
 function round4(){
    resetGameContainer(5);
+   let p = document.createElement('p');
+   p.innerHTML = "ROUND 4";
+   txtArea.appendChild(p);
+
    let playerChoice = this.getAttribute('data-option');
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
 
-   let p = document.createElement('p');
-   p.innerHTML = "Round 5 !<br/>Choose your Move!";
+   p = document.createElement('p');
+   p.innerHTML = "Get ready for the final round ! <br/>Choose your Move :";
    txtArea.appendChild(p);
 
    let roundButtons = document.querySelectorAll('#btn-rd'+5);
@@ -181,9 +201,13 @@ function round4(){
       roundButton.addEventListener('click',round5);
    });
 }
-
+/* Event Listener for round 5 */
 function round5(){
    resetGameContainer('-final');
+   let p = document.createElement('p');
+   p.innerHTML = "FINAL ROUND";
+   txtArea.appendChild(p);
+
    let playerChoice = this.getAttribute('data-option');
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
@@ -195,14 +219,14 @@ function round5(){
 
    getGameOver();
 }
-
+/* Start the game, initialize player and cpu score */
 function startGame(){
    playerScore = 0;
    cpuScore = 0;
    resetGameContainer(1);
 
    let p = document.createElement('p');
-   p.innerHTML = "Round 1 !<br>Choose your Move!";
+   p.innerHTML = "Get ready for round 1 !<br>Choose your Move :";
    txtArea.appendChild(p);
 
    let roundButtons = document.querySelectorAll('button');
@@ -210,14 +234,13 @@ function startGame(){
       roundButton.addEventListener('click',round1);
    });
 }
-
-function getGameOver(){
-   let newP = document.createElement('p');
-   txtArea.appendChild(newP);
-   
+/* Display the Game Over text
+Click on 'Restart' to restart the game*/
+function getGameOver(){ 
    //IT'S A TIE
    if(playerScore==cpuScore){
-      newP.textContent = "IT'S A TIE! You have to play again!";
+      let newP = document.createElement('p');
+      newP.innerHTML = "THIS GAME IS A TIE<br/><br/>You have to play again.";
       txtArea.appendChild(newP);
 
       // Create a 'restart' button
@@ -233,7 +256,8 @@ function getGameOver(){
    else { 
       //YOU WIN
       if(playerScore>cpuScore){
-         newP.textContent = "YOU WIN! CONGRATULATION! THE EARTH IS SAFE NOW";
+         let newP = document.createElement('p');
+         newP.innerHTML = "YOU WON THE GAME ! CONGRATULATIONS !<br/><br/>Our planet is safe now.";
          txtArea.appendChild(newP);
          
          // Create a 'restart' button
@@ -247,7 +271,8 @@ function getGameOver(){
       }
       //YOU LOSE
       else{
-         newP.textContent = "YOU LOSE! EVERYONE IS FUCKING DEAD!!!";
+         let newP = document.createElement('p');
+         newP.innerHTML = "YOU LOST THE GAME!<br/><br/>Earth is in grave danger now.";
          txtArea.appendChild(newP);
          
          // Create a 'restart' button

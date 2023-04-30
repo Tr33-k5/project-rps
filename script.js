@@ -28,50 +28,50 @@ function playOneRound(playerOption,cpuOption){
       txtArea.appendChild(newP);
    }
    else{
-      let newP = document.createElement('p');
+      let p = document.createElement('p');
       /*player choses ROCK*/
       if (playerOption == 'ROCK'){
          if(cpuOption == 'PAPER'){        //display: "You Lose this round! Paper beats Rock"
             cpuScore++;
-            newP = document.createElement('p');
-            newP.textContent = "You Lose this round! Paper beats Rock";
-            txtArea.appendChild(newP);
+            p = document.createElement('p');
+            p.textContent = "You Lose this round! Paper beats Rock";
+            txtArea.appendChild(p);
          }
          else{                            //display: "You win this round!! Rock beats Scissors"
             playerScore++;
-            newP = document.createElement('p');
-            newP.textContent = "You win this round!! Rock beats Scissors";
-            txtArea.appendChild(newP);
+            p = document.createElement('p');
+            p.textContent = "You win this round!! Rock beats Scissors";
+            txtArea.appendChild(p);
          }
       }
       /*player choses PAPER*/
       if (playerOption=='PAPER'){
          if(cpuOption=='SCISSORS'){      //display: "You Lose this round!! Scissors beats Paper"
             cpuScore++;
-            newP = document.createElement('p');
-            newP.textContent = "You Lose this round!! Scissors beats Paper";
-            txtArea.appendChild(newP);
+            p = document.createElement('p');
+            p.textContent = "You Lose this round!! Scissors beats Paper";
+            txtArea.appendChild(p);
          }
          else{                           //display: "You win this round!! Paper beats Rock"
             playerScore++;
             p = document.createElement('p');
             p.textContent = "You win this round!! Paper beats Rock";
-            txtArea.appendChild(newP);
+            txtArea.appendChild(p);
          }
       }
       /*player choses SCISSORS*/
       if (playerOption=='SCISSORS'){
          if(cpuOption=='ROCK'){          //display: "You Lose this round!! Rock beats Scissors"
             cpuScore++;
-            newP = document.createElement('p');
-            newP.textContent = "You Lose this round!! Rock beats Scissors";
-            txtArea.appendChild(newP);
+            p = document.createElement('p');
+            p.textContent = "You Lose this round!! Rock beats Scissors";
+            txtArea.appendChild(p);
          }
          else{                           //display: "You win this round!! Scissors beats Paper"
             playerScore++;
             p = document.createElement('p');
             p.textContent = "You win this round!! Scissors beats Paper";
-            txtArea.appendChild(newP);
+            txtArea.appendChild(p);
          }
       }
    }
@@ -188,7 +188,7 @@ function round5(){
    let cpuChoice = getComputerChoice();
    playOneRound(playerChoice,cpuChoice);
 
-   let finalBtns = document.querySelectorAll('.button-container');
+   let finalBtns = document.querySelectorAll('#btn-rd-final');
    finalBtns.forEach(finalBtn=>{
       finalBtn.remove();
    });
@@ -197,6 +197,8 @@ function round5(){
 }
 
 function startGame(){
+   playerScore = 0;
+   cpuScore = 0;
    resetGameContainer(1);
 
    let p = document.createElement('p');
@@ -218,7 +220,14 @@ function getGameOver(){
       newP.textContent = "IT'S A TIE! You have to play again!";
       txtArea.appendChild(newP);
 
-      /* RESTART THE GAME */ 
+      // Create a 'restart' button
+      let BtnRestart = document.createElement('button');
+      BtnRestart.classList.add('button-start');
+      BtnRestart.textContent = 'RESTART';
+      btnContainer.appendChild(BtnRestart);
+
+      // Click the button to restart the game
+      BtnRestart.addEventListener('click', startGame);
 
    }   
    else { 
@@ -226,13 +235,29 @@ function getGameOver(){
       if(playerScore>cpuScore){
          newP.textContent = "YOU WIN! CONGRATULATION! THE EARTH IS SAFE NOW";
          txtArea.appendChild(newP);
-         return;
+         
+         // Create a 'restart' button
+         let BtnRestart = document.createElement('button');
+         BtnRestart.classList.add('button-start');
+         BtnRestart.textContent = 'RESTART';
+         btnContainer.appendChild(BtnRestart);
+
+         // Click the button to restart the game
+         BtnRestart.addEventListener('click', startGame);
       }
       //YOU LOSE
       else{
          newP.textContent = "YOU LOSE! EVERYONE IS FUCKING DEAD!!!";
          txtArea.appendChild(newP);
-         return;
+         
+         // Create a 'restart' button
+         let BtnRestart = document.createElement('button');
+         BtnRestart.classList.add('button-start');
+         BtnRestart.textContent = 'RESTART';
+         btnContainer.appendChild(BtnRestart);
+
+         // Click the button to restart the game
+         BtnRestart.addEventListener('click', startGame);
       } 
    }
 }
